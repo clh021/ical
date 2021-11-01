@@ -35,8 +35,8 @@ $event
     )
     ->setOccurrence(
         new TimeSpan(
-            new DateTime(DateTimeImmutable::createFromFormat('Y-m-d H:i:s', '2030-12-24 13:30:00'), true),
-            new DateTime(DateTimeImmutable::createFromFormat('Y-m-d H:i:s', '2030-12-24 14:30:00'), true)
+            new DateTime(DateTimeImmutable::createFromFormat('Y-m-d H:i:s', '2021-12-24 13:30:00'), true),
+            new DateTime(DateTimeImmutable::createFromFormat('Y-m-d H:i:s', '2021-12-24 14:30:00'), true)
         )
     )
     ->addAlarm(
