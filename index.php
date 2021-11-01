@@ -19,42 +19,32 @@ use Eluceo\iCal\Presentation\Factory\CalendarFactory;
 
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/functions.php';
+$conf = require_once __DIR__ . './config.php';
 
-// 1. Create Event domain entity.
-$event = new Event();
-$event
-    ->setSummary('Christmas Eve')
-    ->setDescription('Lorem Ipsum Dolor...')
-    ->setOrganizer(new Organizer(
-        new EmailAddress('john.doe@example.com'),
-        'John Doe'
-    ))
-    ->setLocation(
-        (new Location('Neuschwansteinstraße 20, 87645 Schwangau', 'Schloss Neuschwanstein'))
-            ->withGeographicPosition(new GeographicPosition(47.557579, 10.749704))
-    )
-    ->setOccurrence(
-        new TimeSpan(
-            new DateTime(DateTimeImmutable::createFromFormat('Y-m-d H:i:s', '2021-12-24 13:30:00'), true),
-            new DateTime(DateTimeImmutable::createFromFormat('Y-m-d H:i:s', '2021-12-24 14:30:00'), true)
+$events = [];
+foreach ($conf as $c) {
+    $event = new Event();
+    // $c['date']
+    $event
+        ->setSummary($c['title'])
+        ->setOccurrence(
+            new TimeSpan(
+                new DateTime(DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $c['date_begin']), true),
+                new DateTime(DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $c['date_end']), true)
+            )
         )
-    )
-    ->addAlarm(
-        new Alarm(
-            new Alarm\DisplayAction('Reminder: the meeting starts in 15 minutes!'),
-            (new Alarm\RelativeTrigger(DateInterval::createFromDateString('-15 minutes')))->withRelationToEnd()
+        ->addAlarm(
+            new Alarm(
+                new Alarm\DisplayAction('Reminder: '.$c['title'].'!'),
+                (new Alarm\RelativeTrigger(DateInterval::createFromDateString('-15 minutes')))->withRelationToEnd()
+            )
         )
-    )
-    // ->addAttachment(
-    //     new Attachment(
-    //         new Uri('https://ical.poerschke.nrw/favicon.ico'),
-    //         'image/x-icon'
-    //     )
-    // )
-;
+    ;
+}
+
 
 // 2. Create Calendar domain entity.
-$calendar = new Calendar([$event]);
+$calendar = new Calendar($events);
 
 // 3. Transform domain entity into an iCalendar component
 $componentFactory = new CalendarFactory();
