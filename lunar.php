@@ -231,7 +231,7 @@ class Lunar
         }
 //要求查询闰，但查无闰月
         //如果查询的农历是闰月并该年度农历数组存在闰月数据就获取
-        if ($Larray[$month] > 30 && $type == 1 && count($Larray) >= 13) {
+        if ($Larray[intval($month)] > 30 && $type == 1 && count($Larray) >= 13) {
             $day = $Larray[13] + $day;
         }
 
