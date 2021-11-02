@@ -42,6 +42,15 @@ foreach ($conf as $c) {
     $event = new Event();
     $event
         ->setSummary($c['title'])
+        ->setDescription('Lorem Ipsum Dolor...')
+        ->setOrganizer(new Organizer(
+            new EmailAddress('clh021@gmail.com'),
+            'chenlianghong'
+        ))
+        ->setLocation(
+            (new Location('Neuschwansteinstraße 20, 87645 Schwangau', 'Schloss Neuschwanstein'))
+                ->withGeographicPosition(new GeographicPosition(47.557579, 10.749704))
+        )
         ->setOccurrence(
             new TimeSpan(
                 new DateTime(DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $c['translated_date_begin']), true),
@@ -52,6 +61,12 @@ foreach ($conf as $c) {
             new Alarm(
                 new Alarm\DisplayAction('Reminder: '.$c['title'].'!'),
                 (new Alarm\RelativeTrigger(DateInterval::createFromDateString($c['alarm_trigger'])))->withRelationToEnd()
+            )
+        )
+        ->addAttachment(
+            new Attachment(
+                new Uri('https://ical.poerschke.nrw/favicon.ico'),
+                'image/x-icon'
             )
         )
     ;
