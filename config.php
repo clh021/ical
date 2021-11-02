@@ -8,7 +8,7 @@ return [
         'cycle_unit'=>'day',//循环单位
         'cycle_set'=>28,//循环天数
         'alarm_display'=>true,//显示闹钟
-        'alarm_trigger'=>'-15 minutes',//提前触发闹钟
+        'alarm_trigger'=>'-3 days',//提前触发闹钟 //'-15 minutes'
     ],
     [
         'title'=>'house loan',
