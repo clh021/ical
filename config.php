@@ -1,10 +1,12 @@
 <?php
 $date_begin_test = date("Y-m-d H:i:s", strtotime("+3 hours"));
 $date_end_test = date("Y-m-d H:i:s", strtotime("+1 days"));
+$calendar_begin = date("Y-m-d H:i:s");
+$calendar_end = date("Y-m-d H:i:s", strtotime("+2 years"));
 
 return [
     [
-        'title'=>'test',
+        'title'=>'test'.$calendar_begin,
         'date_begin' => $date_begin_test,
         'date_end' => $date_end_test,
         'in_lunar' => false,//是否使用农历计算
