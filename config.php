@@ -1,5 +1,18 @@
 <?php
+$date_begin_test = date("Y-m-d H:i:s", strtotime("+3 hours"));
+$date_end_test = date("Y-m-d H:i:s", strtotime("+1 days"));
+
 return [
+    [
+        'title'=>'test',
+        'date_begin' => $date_begin_test,
+        'date_end' => $date_end_test,
+        'in_lunar' => false,//是否使用农历计算
+        'cycle_unit'=>'mounth',//循环单位
+        'cycle_set'=>1,//循环天数
+        'alarm_display'=>true,//显示闹钟
+        'alarm_trigger'=>'-3 days',//提前触发闹钟 //'-15 minutes'
+    ],
     [
         'title'=>'bread',
         'date_begin' => '2021-10-14 09:00:00',
