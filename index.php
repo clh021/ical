@@ -32,11 +32,11 @@ $events = [];
 
 foreach ($conf as $c) {
     $t = 0;
+    if (isValid($c['date_begin'])) {
+        $events[] = getEvent($c);
+    }
     do {
         // 计算有效时间
-        if (isValid($c['date_begin'])) {
-            $events[] = getEvent($c);
-        }
         $c['date_begin'] = nextDate($c['date_begin'], $c['cycle_set']);
         $c['date_end'] = nextDate($c['date_end'], $c['cycle_set']);
         $t = strtotime($c['date_begin']);
