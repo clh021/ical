@@ -34,13 +34,12 @@ foreach ($conf as $c) {
     $t = 0;
     do {
         // 计算有效时间
+        if (isValid($c['date_begin'])) {
+            $events[] = getEvent($c);
+        }
         $c['date_begin'] = nextDate($c['date_begin'], $c['cycle_set']);
         $c['date_end'] = nextDate($c['date_end'], $c['cycle_set']);
-
         $t = strtotime($c['date_begin']);
-        // TODO: 计算一段时间内的所有事件提醒，输出至订阅
-        // TODO: 输出时间段内的截止时间，提醒更新日历事件更新
-        // var_dump($c);
         $events[] = getEvent($c);
     } while ($t < strtotime($calendar_end));
 }

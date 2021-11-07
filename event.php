@@ -51,7 +51,7 @@ function getEvent($c) {
     $event = new Event();
     $event
         ->setSummary($c['title'])
-        ->setDescription('setDescription:' . $c['title'])
+        ->setDescription(($c['in_lunar'] ? '农历' : '公历').':'.$c['date_begin'].($c['in_lunar'] ? '=>'.$c['translated_date_begin'] : ''))
         ->setOrganizer(getOrganizer())
         // ->setLocation(($Location)->withGeographicPosition($GPS))
         ->setOccurrence($Occurrence)
