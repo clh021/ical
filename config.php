@@ -3,7 +3,7 @@ $date_begin_test = date("Y-m-d H:i:s", strtotime("+3 hours"));
 $date_end_test = date("Y-m-d H:i:s", strtotime("+6 hours"));
 $calendar_begin = date("Y-m-d H:i:s");
 $calendar_end = date("Y-m-d H:i:s", strtotime("+2 years"));
-$ny = date("Y"); // now year
+$ny = date("Y", strtotime("-1 year")); // last year
 
 return [
     [
