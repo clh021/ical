@@ -11,14 +11,14 @@ return [
         'date_begin' => $date_begin_test,
         'date_end' => $date_end_test,
         'in_lunar' => false,//是否使用农历计算
-        'cycle_set'=>'+1 month',//循环设置
+        'cycle_set'=>'+1 year',//循环设置
         'alarm_display'=>true,//显示闹钟
         'alarm_trigger'=>'-3 days',//提前触发闹钟 //'-15 minutes'
     ],
     [
         'title'=>'bread',
-        'date_begin' => nextDate($ny.'-10-14 09:00:00','+28 days'),
-        'date_end' => nextDate($ny.'-10-14 12:40:00','+28 days'),
+        'date_begin' => $ny.'-10-14 09:00:00','+28 days',
+        'date_end' => $ny.'-10-14 12:40:00','+28 days',
         'in_lunar' => false,//是否使用农历计算
         'cycle_set'=>'+28 days',//循环设置
         'alarm_display'=>true,//显示闹钟
@@ -26,8 +26,8 @@ return [
     ],
     [
         'title'=>'house loan',
-        'date_begin' => nextDate($ny.'-10-20 09:00:00','+1 month'),
-        'date_end' => nextDate($ny.'-10-20 12:40:00','+1 month'),
+        'date_begin' => $ny.'-10-20 09:00:00','+1 month',
+        'date_end' => $ny.'-10-20 12:40:00','+1 month',
         'in_lunar' => false,
         'cycle_set'=>'+1 month',
         'alarm_display'=>true,
@@ -35,8 +35,8 @@ return [
     ],
     [
         'title'=>'sister birthday',
-        'date_begin' => nextDate($ny.'-07-06 09:00:00','+1 year'),
-        'date_end' => nextDate($ny.'-07-06 12:40:00','+1 year'),
+        'date_begin' => $ny.'-07-06 09:00:00','+1 year',
+        'date_end' => $ny.'-07-06 12:40:00','+1 year',
         'in_lunar' => true,
         'cycle_set'=>'+1 year',
         'alarm_display'=>true,
@@ -44,8 +44,8 @@ return [
     ],
     [
         'title'=>'pmm birthday',
-        'date_begin' => nextDate($ny.'-07-20 09:00:00','+1 year'),
-        'date_end' => nextDate($ny.'-07-20 12:40:00','+1 year'),
+        'date_begin' => $ny.'-07-20 09:00:00','+1 year',
+        'date_end' => $ny.'-07-20 12:40:00','+1 year',
         'in_lunar' => true,
         'cycle_set'=>'+1 year',
         'alarm_display'=>true,
@@ -53,8 +53,8 @@ return [
     ],
     [
         'title'=>'mother birthday',
-        'date_begin' => nextDate($ny.'-08-11 09:00:00','+1 year'),
-        'date_end' => nextDate($ny.'-08-11 12:40:00','+1 year'),
+        'date_begin' => $ny.'-08-11 09:00:00','+1 year',
+        'date_end' => $ny.'-08-11 12:40:00','+1 year',
         'in_lunar' => true,
         'cycle_set'=>'+1 year',
         'alarm_display'=>true,
@@ -62,8 +62,8 @@ return [
     ],
     [
         'title'=>'father birthday',
-        'date_begin' => nextDate($ny.'-09-20 09:00:00','+1 year'),
-        'date_end' => nextDate($ny.'-09-20 12:40:00','+1 year'),
+        'date_begin' => $ny.'-09-20 09:00:00','+1 year',
+        'date_end' => $ny.'-09-20 12:40:00','+1 year',
         'in_lunar' => true,
         'cycle_set'=>'+1 year',
         'alarm_display'=>true,
@@ -71,8 +71,8 @@ return [
     ],
     [
         'title'=>'pl.father birthday',
-        'date_begin' => nextDate($ny.'-06-19 09:00:00','+1 year'),
-        'date_end' => nextDate($ny.'-06-19 12:40:00','+1 year'),
+        'date_begin' => $ny.'-06-19 09:00:00','+1 year',
+        'date_end' => $ny.'-06-19 12:40:00','+1 year',
         'in_lunar' => true,
         'cycle_set'=>'+1 year',
         'alarm_display'=>true,
@@ -80,8 +80,8 @@ return [
     ],
     [
         'title'=>'2018.32years.marriedDay',
-        'date_begin' => nextDate($ny.'-10-18 09:00:00','+1 year'),
-        'date_end' => nextDate($ny.'-10-18 12:40:00','+1 year'),
+        'date_begin' => $ny.'-10-18 09:00:00','+1 year',
+        'date_end' => $ny.'-10-18 12:40:00','+1 year',
         'in_lunar' => true,
         'cycle_set'=>'+1 year',
         'alarm_display'=>true,

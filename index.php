@@ -25,29 +25,24 @@ use Eluceo\iCal\Presentation\Factory\CalendarFactory;
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/functions.php';
 require_once __DIR__ . '/event.php';
-require_once __DIR__ . '/lunar.php';
 
 $conf = require_once __DIR__ . '/config.php';
 
 $events = [];
-$lunar = new Lunar();
 
 foreach ($conf as $c) {
-    // TODO: 计算一段时间内的所有事件提醒，输出至订阅
-    // TODO: 输出时间段内的截止时间，提醒更新日历事件更新
+    $t = 0;
+    do {
+        // 计算有效时间
+        $c['date_begin'] = nextDate($c['date_begin'], $c['cycle_set']);
+        $c['date_end'] = nextDate($c['date_end'], $c['cycle_set']);
 
-    if ($c['in_lunar']) {
-        $date_begin_time = strtotime($c['date_begin']);
-        $date_end_time = strtotime($c['date_end']);
-        $c['translated_date_begin'] = date("Y-m-d", $lunar->L2S(date('Y-m-d', $date_begin_time))) . date(' H:i:s', $date_begin_time);
-        $c['translated_date_end'] = date("Y-m-d", $lunar->L2S(date('Y-m-d', $date_end_time))) . date(' H:i:s', $date_end_time);
-    } else {
-        $c['translated_date_begin'] = $c['date_begin'];
-        $c['translated_date_end'] = $c['date_end'];
-    }
-    // var_dump($c);
-
-    $events[] = getEvent($c);
+        $t = strtotime($c['date_begin']);
+        // TODO: 计算一段时间内的所有事件提醒，输出至订阅
+        // TODO: 输出时间段内的截止时间，提醒更新日历事件更新
+        // var_dump($c);
+        $events[] = getEvent($c);
+    } while ($t < strtotime($calendar_end));
 }
 
 // 2. Create Calendar domain entity.
@@ -60,7 +55,10 @@ $calendarComponent = $componentFactory->createCalendar($calendar);
 
 // 4. Output
 if(is_cli()) {
-    file_put_contents('calendar.ics', (string) $calendarComponent);
+    shell_exec("rm -rf ./dist;mkdir dist;");
+    $calendarStr = (string) $calendarComponent;
+    file_put_contents('dist/' . date("Ymd.Hi", strtotime("+8 hours")) . '.calendar.ics', $calendarStr);
+    file_put_contents('dist/calendar.ics', $calendarStr);
 } else {
     header('Content-Type: text/calendar; charset=utf-8');
     header('Content-Disposition: attachment; filename="cal.ics"');

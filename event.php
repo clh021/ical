@@ -16,7 +16,22 @@ use Eluceo\iCal\Domain\ValueObject\TimeSpan;
 use Eluceo\iCal\Domain\ValueObject\Uri;
 use Eluceo\iCal\Presentation\Factory\CalendarFactory;
 
+require_once __DIR__ . '/lunar.php';
+
+$lunar = new Lunar();
+
 function getEvent($c) {
+    global $lunar;
+    if ($c['in_lunar']) {
+        $date_begin_time = strtotime($c['date_begin']);
+        $date_end_time = strtotime($c['date_end']);
+        $c['translated_date_begin'] = date("Y-m-d", $lunar->L2S(date('Y-m-d', $date_begin_time))) . date(' H:i:s', $date_begin_time);
+        $c['translated_date_end'] = date("Y-m-d", $lunar->L2S(date('Y-m-d', $date_end_time))) . date(' H:i:s', $date_end_time);
+    } else {
+        $c['translated_date_begin'] = $c['date_begin'];
+        $c['translated_date_end'] = $c['date_end'];
+    }
+
     $Occurrence = new TimeSpan(
         new DateTime(DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $c['translated_date_begin']), true),
         new DateTime(DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $c['translated_date_end']), true)
