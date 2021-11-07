@@ -75,8 +75,8 @@ foreach ($conf as $c) {
         $event = new Event();
         $event
             ->setSummary($c['title'])
-            ->setDescription('setDescription:'.$c['title'])
-            ->setOrganizer(getOrganizer())
+            // ->setDescription('setDescription:'.$c['title'])
+            // ->setOrganizer(getOrganizer())
             // ->setLocation(($Location)->withGeographicPosition($GPS))
             ->setOccurrence($Occurrence)
             ->addAlarm($Alarm)
