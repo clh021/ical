@@ -1,5 +1,10 @@
 <?php
-// https: //ical.poerschke.nrw/docs/
+// https: //ical.poerschke.nrw/docs/ # 具体规则文档
+// https://ical.marudot.com/ # 文件生成器 可用来加载生成好的文件
+// https://www.eventolist.com/ # 付费的事件清单在线服务
+// https://ical.marudot.com/pages/result.jsp 
+// https://icalendar.org # 推广ical标准，含验证器，规则工具库，资源
+
 namespace Example;
 
 use DateInterval;
@@ -60,8 +65,8 @@ foreach ($conf as $c) {
         $Alarm = new Alarm(
             new Alarm\DisplayAction('Reminder: '.$c['title'].'!'),
             // new Alarm\DisplayAction('Reminder: the meeting starts in 15 minutes!'),
-            (new Alarm\RelativeTrigger(DateInterval::createFromDateString('-15 minutes')))->withRelationToEnd()
-            // (new Alarm\RelativeTrigger(DateInterval::createFromDateString($c['alarm_trigger'])))->withRelationToEnd()
+            // (new Alarm\RelativeTrigger(DateInterval::createFromDateString('-15 minutes')))->withRelationToEnd()
+            (new Alarm\RelativeTrigger(DateInterval::createFromDateString($c['alarm_trigger'])))->withRelationToEnd()
         );
         $Attach = new Attachment(
             new Uri('https://ical.poerschke.nrw/favicon.ico'),
@@ -72,10 +77,11 @@ foreach ($conf as $c) {
             ->setSummary($c['title'])
             ->setDescription('setDescription:'.$c['title'])
             ->setOrganizer(getOrganizer())
-            ->setLocation(($Location)->withGeographicPosition($GPS))
+            // ->setLocation(($Location)->withGeographicPosition($GPS))
             ->setOccurrence($Occurrence)
             ->addAlarm($Alarm)
-            ->addAttachment($Attach);
+            // ->addAttachment($Attach)
+            ;
         $events[] = $event;
         $i = date("Ymd",strtotime($calendar_end));
     } while ($i < intval(date("Ymd", strtotime($calendar_end))));
