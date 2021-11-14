@@ -23,6 +23,8 @@ return [
         'cycle_set'=>'+28 days',//循环设置
         'alarm_display'=>true,//显示闹钟
         'alarm_trigger'=>'-3 days',//提前触发闹钟 //'-15 minutes'
+        // 11.10 -2 days 11.8
+        // => 12.4(Not28Is26) , 12.6(Continue), 12.8(28IsOK)
     ],
     [
         'title'=>'house loan',
