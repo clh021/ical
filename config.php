@@ -17,14 +17,15 @@ return [
     ],
     [
         'title'=>'bread',
-        'date_begin' => $ny.'-10-14 09:00:00','+28 days',
-        'date_end' => $ny.'-10-14 12:40:00','+28 days',
+        'date_begin' => $ny.'-10-14 09:00:00','+26 days',
+        'date_end' => $ny.'-10-14 12:40:00','+26 days',
         'in_lunar' => false,//是否使用农历计算
-        'cycle_set'=>'+28 days',//循环设置
+        'cycle_set'=>'+26 days',//循环设置
         'alarm_display'=>true,//显示闹钟
         'alarm_trigger'=>'-3 days',//提前触发闹钟 //'-15 minutes'
         // 11.10 -2 days 11.8
         // => 12.4(Not28Is26) , 12.6(Continue), 12.8(28IsOK)
+        // => 12.4(26IsOK,26.5) , 12.30(Continue)
     ],
     [
         'title'=>'house loan',
