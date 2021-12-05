@@ -12,6 +12,7 @@ ical lib for me
 ### cli
 
 ```bash
+composer update
 php index.php
 ```
 
