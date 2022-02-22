@@ -26,6 +26,7 @@ return [
         // 11.10 -2 days 11.8
         // => 12.4(Not28Is26) , 12.6(Continue), 12.8(28IsOK)
         // => 12.4(26IsOK,26.5) , 12.30(Continue)
+        // => no record once : 01.26(?continue), 02.22(?continue)
     ],
     [
         'title'=>'house loan',
