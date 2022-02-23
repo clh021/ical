@@ -24,7 +24,7 @@ return [
         'cycle_set'=>'+26 days',//循环设置
         'alarm_display'=>true,//显示闹钟
         'alarm_trigger'=>'-3 days',//提前触发闹钟 //'-15 minutes'
-        // 11.10 -2 days 11.8
+        // 10-14 ~ 11.10 -2 days 11.8
         // => 12.4(Not28Is26) , 12.6(Continue)
         // => 12.4(26IsOK,26.5) , 12.30(Continue), 01.26(?continue), 02.23(continue)
     ],
