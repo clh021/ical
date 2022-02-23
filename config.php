@@ -3,7 +3,8 @@ $date_begin_test = date("Y-m-d H:i:s", strtotime("+3 hours"));
 $date_end_test = date("Y-m-d H:i:s", strtotime("+6 hours"));
 $calendar_begin = date("Y-m-d H:i:s");
 $calendar_end = date("Y-m-d H:i:s", strtotime("+1 years"));
-$ny = date("Y", strtotime("-1 year")); // last year
+//$ny = date("Y", strtotime("-1 year")); // last year
+$ny = date("Y");
 
 return [
     [
@@ -17,16 +18,15 @@ return [
     ],
     [
         'title'=>'bread',
-        'date_begin' => $ny.'-10-14 09:00:00','+26 days',
-        'date_end' => $ny.'-10-14 12:40:00','+26 days',
+        'date_begin' => $ny.'-02-23 09:00:00','+26 days',
+        'date_end' => $ny.'-02-23 12:40:00','+26 days',
         'in_lunar' => false,//是否使用农历计算
         'cycle_set'=>'+26 days',//循环设置
         'alarm_display'=>true,//显示闹钟
         'alarm_trigger'=>'-3 days',//提前触发闹钟 //'-15 minutes'
         // 11.10 -2 days 11.8
-        // => 12.4(Not28Is26) , 12.6(Continue), 12.8(28IsOK)
-        // => 12.4(26IsOK,26.5) , 12.30(Continue)
-        // => no record once : 01.26(?continue), 02.22(?continue)
+        // => 12.4(Not28Is26) , 12.6(Continue)
+        // => 12.4(26IsOK,26.5) , 12.30(Continue), 01.26(?continue), 02.23(continue)
     ],
     [
         'title'=>'house loan',
