@@ -68,12 +68,6 @@
                 "ics",
                 "php calendar"
             ],
-            "support": {
-                "docs": "https://ical.poerschke.nrw",
-                "forum": "https://github.com/markuspoerschke/iCal/discussions",
-                "issues": "https://github.com/markuspoerschke/iCal/issues",
-                "source": "https://github.com/markuspoerschke/iCal"
-            },
             "time": "2022-02-13T19:32:24+00:00"
         },
         {
@@ -130,9 +124,6 @@
             ],
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.0"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -158,5 +149,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }
