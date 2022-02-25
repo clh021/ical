@@ -21,7 +21,7 @@ return [
         'date_begin' => $ny.'-02-23 09:00:00','+26 days',
         'date_end' => $ny.'-02-23 12:40:00','+26 days',
         'in_lunar' => false,//是否使用农历计算
-        'cycle_set'=>'+26 days',//循环设置
+        'cycle_set'=>'+638 hours',//循环设置 638 hours =  +26 days + 14 hours
         'alarm_display'=>true,//显示闹钟
         'alarm_trigger'=>'-3 days',//提前触发闹钟 //'-15 minutes'
         // 10-14 ~ 11.10 -2 days 11.8
