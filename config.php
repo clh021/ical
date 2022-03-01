@@ -18,8 +18,8 @@ return [
     ],
     [
         'title'=>'bread',
-        'date_begin' => $ny.'-02-23 09:00:00','+26 days',
-        'date_end' => $ny.'-02-23 12:40:00','+26 days',
+        'date_begin' => $ny.'-02-23 14:00:00','+26 days',
+        'date_end' => $ny.'-02-23 18:00:00','+26 days',
         'in_lunar' => false,//是否使用农历计算
         'cycle_set'=>'+638 hours',//循环设置 638 hours =  +26 days + 14 hours
         'alarm_display'=>true,//显示闹钟
