@@ -1,6 +1,6 @@
 <?php
-$date_begin_test = date("Y-m-d H:i:s", strtotime("+3 hours"));
-$date_end_test = date("Y-m-d H:i:s", strtotime("+6 hours"));
+$date_begin_test = date("Y-m-d H:i:s", strtotime("+1 hours"));
+$date_end_test = date("Y-m-d H:i:s", strtotime("+2 hours"));
 $calendar_begin = date("Y-m-d H:i:s");
 $calendar_end = date("Y-m-d H:i:s", strtotime("+1 years"));
 //$ny = date("Y", strtotime("-1 year")); // last year
