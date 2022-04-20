@@ -12,6 +12,7 @@ ical lib for me
 ### cli
 
 ```bash
+wget -c https://mirrors.aliyun.com/composer/composer.phar
 composer update
 php index.php
 ```
