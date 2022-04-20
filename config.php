@@ -18,15 +18,16 @@ return [
     ],
     [
         'title'=>'bread',
-        'date_begin' => $ny.'-02-23 14:00:00','+26 days',
-        'date_end' => $ny.'-02-23 18:00:00','+26 days',
+        'date_begin' => $ny.'-04-19 07:00:00','+26 days',
+        'date_end' => $ny.'-04-19 10:00:00','+26 days',
         'in_lunar' => false,//是否使用农历计算
         'cycle_set'=>'+638 hours',//循环设置 638 hours =  +26 days + 14 hours
         'alarm_display'=>true,//显示闹钟
         'alarm_trigger'=>'-3 days',//提前触发闹钟 //'-15 minutes'
         // 10-14 ~ 11.10 -2 days 11.8
         // => 12.4(Not28Is26) , 12.6(Continue)
-        // => 12.4(26IsOK,26.5) , 12.30(Continue), 01.26(?continue), 02.23(continue)
+        // => 12.4(26IsOK,26.5) , 12.30(Continue), 01.26(?continue), 02.23(continue), 03,21(continue)
+        // => 4.19(早上,冷,咳嗽,Not4.17)，下一次如果是5.14则说明健康原因变化无需修改时间
     ],
     [
         'title'=>'house loan',
