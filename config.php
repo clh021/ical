@@ -26,8 +26,9 @@ return [
         'alarm_trigger'=>'-3 days',//提前触发闹钟 //'-15 minutes'
         // 10-14 ~ 11.10 -2 days 11.8
         // => 12.4(Not28Is26) , 12.6(Continue)
-        // => 12.4(26IsOK,26.5) , 12.30(Continue), 01.26(?continue), 02.23(continue), 03,21(continue)
+        // => 12.4(26IsOK,26.5) , 12.30(Continue), 2022.01.26(?continue), 02.23(continue), 03,21(continue)
         // => 4.19(早上,冷,咳嗽,Not4.17)，下一次如果是5.14则说明健康原因变化无需修改时间
+        // => 5.17(早上,Not5.14,5.14已有感觉)，
     ],
     [
         'title'=>'house loan',

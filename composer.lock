@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "eluceo/ical",
-            "version": "2.5.0",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/markuspoerschke/iCal.git",
-                "reference": "f9a74fefe5582f7e8444e0e87058e36c62e1b005"
+                "reference": "3bf16b2a4f9250184fd16b13cbf7771051e4e7b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/markuspoerschke/iCal/zipball/f9a74fefe5582f7e8444e0e87058e36c62e1b005",
-                "reference": "f9a74fefe5582f7e8444e0e87058e36c62e1b005",
+                "url": "https://api.github.com/repos/markuspoerschke/iCal/zipball/3bf16b2a4f9250184fd16b13cbf7771051e4e7b1",
+                "reference": "3bf16b2a4f9250184fd16b13cbf7771051e4e7b1",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -74,7 +74,7 @@
                 "issues": "https://github.com/markuspoerschke/iCal/issues",
                 "source": "https://github.com/markuspoerschke/iCal"
             },
-            "time": "2022-02-13T19:32:24+00:00"
+            "time": "2022-04-26T12:14:20+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -158,5 +158,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.0.0"
 }
