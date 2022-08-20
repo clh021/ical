@@ -2,7 +2,7 @@ calendar_list:
   - #
     name: "bread"
     date_begin: "04-19 07:00:00"
-    end_begin: "04-19 07:00:00"
+    date_end: "04-19 07:00:00"
     is_lunar: false
     cycle: "+1 year"
     alarm:
@@ -15,7 +15,7 @@ calendar_list:
   - #
     name: "houseLoan"
     date_begin: "10-20 09:00:00"
-    end_begin: "10-20 12:40:00"
+    date_end: "10-20 12:40:00"
     is_lunar: false
     cycle: "+1 month"
     alarm:
