@@ -1,8 +1,8 @@
 calendar_list:
   - #
     name: "bread"
-    date_begin: "04-19 07:00:00"
-    date_end: "04-19 07:00:00"
+    date_begin: "04-19T00:00:00Z"
+    date_end: "04-19T00:00:00Z"
     is_lunar: false
     cycle: "+1 year"
     alarm:
@@ -14,56 +14,56 @@ calendar_list:
       # => 5.17(早上Not5.145.14已有感觉)，6.11(6.18hasjv) 7.8(晨5腰酸)，8.4(晨)
   - #
     name: "houseLoan"
-    date_begin: "10-20 09:00:00"
-    date_end: "10-20 12:40:00"
+    date_begin: "10-20T01:00:00Z"
+    date_end: "10-20T08:40:00Z"
     is_lunar: false
     cycle: "+1 month"
     alarm:
       - "-2 days"
   - #
     name: "sisterBirthday"
-    date_begin: "07-06 09:00:00"
-    date_end: "07-06 12:40:00"
+    date_begin: "07-06T01:00:00Z"
+    date_end: "07-06T08:40:00Z"
     is_lunar: true
     cycle: "+1 year"
     alarm:
       - "-7 days"
   - #
     name: "pmmBirthday"
-    date_begin: "07-20 09:00:00"
-    date_end: "07-20 12:40:00"
+    date_begin: "07-20T01:00:00Z"
+    date_end: "07-20T08:40:00Z"
     is_lunar: true
     cycle: "+1 year"
     alarm:
       - "-7 days"
   - #
     name: "motherBirthday"
-    date_begin: "08-11 09:00:00"
-    date_end: "08-11 12:40:00"
+    date_begin: "08-11T01:00:00Z"
+    date_end: "08-11T08:40:00Z"
     is_lunar: true
     cycle: "+1 year"
     alarm:
       - "-7 days"
   - #
     name: "fatherBirthday"
-    date_begin: "09-20 09:00:00"
-    date_end: "09-20 12:40:00"
+    date_begin: "09-20T01:00:00Z"
+    date_end: "09-20T08:40:00Z"
     is_lunar: true
     cycle: "+1 year"
     alarm:
       - "-7 days"
   - #
     name: "PLfatherBirthday"
-    date_begin: "06-19 09:00:00"
-    date_end: "06-19 12:40:00"
+    date_begin: "06-19T01:00:00Z"
+    date_end: "06-19T08:40:00Z"
     is_lunar: true
     cycle: "+1 year"
     alarm:
       - "-7 days"
   - #
     name: "When2018Has32YearsMarriedDay"
-    date_begin: "10-18 09:00:00"
-    date_end: "10-18 12:40:00"
+    date_begin: "10-18T01:00:00Z"
+    date_end: "10-18T08:40:00Z"
     is_lunar: true
     cycle: "+1 year"
     alarm:
