@@ -1,0 +1,62 @@
+calendar_list:
+  - bread:
+      date_begin: "04-19 07:00:00"
+      end_begin: "04-19 07:00:00"
+      is_lunar: false
+      cycle: "+1 year"
+      alarm:
+        - "-3 days"
+        # 10-14 ~ 11.10 -2 days 11.8
+        # => 12.4(Not28Is26)  12.6(Continue)
+        # => 12.4(26IsOK26.5)  12.30(Continue) 2022.01.26(?continue) 02.23(continue) 0321(continue)
+        # => 4.19(早上冷咳嗽Not4.17)，下一次如果是5.14则说明健康原因变化无需修改时间
+        # => 5.17(早上Not5.145.14已有感觉)，6.11(6.18hasjv) 7.8(晨5腰酸)，8.4(晨)
+  - houseLoan:
+      date_begin: "10-20 09:00:00"
+      end_begin: "10-20 12:40:00"
+      is_lunar: false
+      cycle: "+1 month"
+      alarm:
+        - "-2 days"
+  - sisterBirthday:
+      date_begin: "07-06 09:00:00"
+      date_end: "07-06 12:40:00"
+      is_lunar: true
+      cycle: "+1 year"
+      alarm:
+        - "-7 days"
+  - pmmBirthday:
+      date_begin: "07-20 09:00:00"
+      date_end: "07-20 12:40:00"
+      is_lunar: true
+      cycle: "+1 year"
+      alarm:
+        - "-7 days"
+  - motherBirthday:
+      date_begin: "08-11 09:00:00"
+      date_end: "08-11 12:40:00"
+      is_lunar: true
+      cycle: "+1 year"
+      alarm:
+        - "-7 days"
+  - fatherBirthday:
+      date_begin: "09-20 09:00:00"
+      date_end: "09-20 12:40:00"
+      is_lunar: true
+      cycle: "+1 year"
+      alarm:
+        - "-7 days"
+  - pl.fatherBirthday:
+      date_begin: "06-19 09:00:00"
+      date_end: "06-19 12:40:00"
+      is_lunar: true
+      cycle: "+1 year"
+      alarm:
+        - "-7 days"
+  - 2018.32years.marriedDay:
+      date_begin: "10-18 09:00:00"
+      date_end: "10-18 12:40:00"
+      is_lunar: true
+      cycle: "+1 year"
+      alarm:
+        - "-7 days"
