@@ -54,10 +54,10 @@ $calendarComponent = $componentFactory->createCalendar($calendar);
 
 // 4. Output
 if(is_cli()) {
-    shell_exec("rm -rf ./dist;mkdir dist;");
+    shell_exec("rm -rf ./../dist;mkdir ./../dist;");
     $calendarStr = (string) $calendarComponent;
-    file_put_contents('dist/' . date("Ymd.Hi", strtotime("+8 hours")) . '.calendar.ics', $calendarStr);
-    file_put_contents('dist/calendar.ics', $calendarStr);
+    file_put_contents('./../dist/' . date("Ymd.Hi", strtotime("+8 hours")) . '.calendar.ics', $calendarStr);
+    file_put_contents('./../dist/calendar.ics', $calendarStr);
 } else {
     header('Content-Type: text/calendar; charset=utf-8');
     header('Content-Disposition: attachment; filename="cal.ics"');
