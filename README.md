@@ -9,15 +9,19 @@ ical lib for me
 
 ## 使用
 
-### cli
+### php cli
 
 ```bash
+cd php
 wget -c https://mirrors.aliyun.com/composer/composer.phar
 composer update
 php index.php
 ```
 
-### web
+### javascript
 
-webroot this directory
-
+```bash
+cd js
+npm i
+node index.js
+```
