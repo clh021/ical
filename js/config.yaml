@@ -1,70 +1,86 @@
 calendar_list:
   - #
-    name: "bread"
+    title: "bread"
     date_begin: "04-19T00:00:00Z"
     date_end: "04-19T00:00:00Z"
     is_lunar: false
-    cycle: "+1 year"
+    cycle:
+      year: +1
     alarm:
-      - "-3 days"
+      - #
+        day: -3
       # 10-14 ~ 11.10 -2 days 11.8
       # => 12.4(Not28Is26)  12.6(Continue)
       # => 12.4(26IsOK26.5)  12.30(Continue) 2022.01.26(?continue) 02.23(continue) 0321(continue)
       # => 4.19(早上冷咳嗽Not4.17)，下一次如果是5.14则说明健康原因变化无需修改时间
       # => 5.17(早上Not5.145.14已有感觉)，6.11(6.18hasjv) 7.8(晨5腰酸)，8.4(晨)
   - #
-    name: "houseLoan"
+    title: "houseLoan"
     date_begin: "10-20T01:00:00Z"
     date_end: "10-20T08:40:00Z"
     is_lunar: false
-    cycle: "+1 month"
+    cycle:
+      month: +1
     alarm:
-      - "-2 days"
+      - #
+        day: -2
   - #
-    name: "sisterBirthday"
+    title: "sisterBirthday"
     date_begin: "07-06T01:00:00Z"
     date_end: "07-06T08:40:00Z"
     is_lunar: true
-    cycle: "+1 year"
+    cycle:
+      year: +1
     alarm:
-      - "-7 days"
+      - #
+        day: -7
   - #
-    name: "pmmBirthday"
+    title: "pmmBirthday"
     date_begin: "07-20T01:00:00Z"
     date_end: "07-20T08:40:00Z"
     is_lunar: true
-    cycle: "+1 year"
+    cycle:
+      year: +1
     alarm:
-      - "-7 days"
+      - #
+        day: -7
   - #
-    name: "motherBirthday"
+    title: "motherBirthday"
     date_begin: "08-11T01:00:00Z"
     date_end: "08-11T08:40:00Z"
     is_lunar: true
-    cycle: "+1 year"
+    cycle:
+      year: +1
     alarm:
-      - "-7 days"
+      - #
+        day: -7
   - #
-    name: "fatherBirthday"
+    title: "fatherBirthday"
     date_begin: "09-20T01:00:00Z"
     date_end: "09-20T08:40:00Z"
     is_lunar: true
-    cycle: "+1 year"
+    cycle:
+      year: +1
     alarm:
-      - "-7 days"
+      - #
+        day: -7
   - #
-    name: "PLfatherBirthday"
+    title: "PLfatherBirthday"
     date_begin: "06-19T01:00:00Z"
     date_end: "06-19T08:40:00Z"
     is_lunar: true
-    cycle: "+1 year"
+    cycle:
+      year: +1
     alarm:
-      - "-7 days"
+      - #
+        day: -7
   - #
-    name: "When2018Has32YearsMarriedDay"
+    title: "When2018Has32YearsMarriedDay"
     date_begin: "10-18T01:00:00Z"
     date_end: "10-18T08:40:00Z"
     is_lunar: true
-    cycle: "+1 year"
+    cycle:
+      year: +1
     alarm:
-      - "-7 days"
+      - #
+        day: -7

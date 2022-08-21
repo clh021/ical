@@ -23,18 +23,26 @@ const getRealDate = (is_lunar, date_get) => {
 const confParse = (c) => {
     let year = (new Date()).getFullYear();
     // 今明年范围内的时间都在列表范围
-    let tmpNextBegin = `${year}-${c.date_begin}`
-    let tmpNextEnd = `${year}-${c.date_end}`
-    if (isDate(tmpNextBegin)) {
-        c.date_next_begin = new Date(tmpNextBegin)
+    let tmpBegin = `${year}-${c.date_begin}`
+    // let tmpEnd = `${year}-${c.date_end}`
+    if (isDate(tmpBegin)) {
+        c.date_next_begin = new Date(tmpBegin)
         // 根据配置决定是否转换农历
         c.date_next_begin_real = getRealDate(c.is_lunar, c.date_next_begin)
     }
-    if (isDate(tmpNextEnd)) {
-        c.date_next_end = new Date(tmpNextEnd)
-        // 根据配置决定是否转换农历
-        c.date_next_end_real = getRealDate(c.is_lunar, c.date_next_end)
-    }
+    // if (isDate(tmpEnd)) {
+    //     c.date_next_end = new Date(tmpEnd)
+    //     // 根据配置决定是否转换农历
+    //     c.date_next_end_real = getRealDate(c.is_lunar, c.date_next_end)
+    // }
+    let tmpNext = c.date_next_begin;
+    let event_list = [];
+    do {
+        event_list.push(tmpNext);
+        // tmpNext
+    } while (c.date_begin.getFullYear < (year + 1));
+
+
     console.log(`${year}-${c.date_begin}`)
     console.log(`${year}-${c.date_end}`)
 }
