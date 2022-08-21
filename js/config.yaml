@@ -5,7 +5,7 @@ calendar_list:
     date_end: "04-19T00:00:00Z"
     is_lunar: false
     cycle:
-      year: +1
+      day: +26.7
     alarm:
       - #
         day: -3
@@ -43,7 +43,9 @@ calendar_list:
       year: +1
     alarm:
       - #
-        day: -7
+        day: -4
+      - #
+        day: -9
   - #
     title: "motherBirthday"
     date_begin: "08-11T01:00:00Z"
