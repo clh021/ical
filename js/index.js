@@ -71,12 +71,31 @@ const confParse = (c) => {
     })
 }
 
+let events = []
+const EventList = (c) => {
+    c.alarm.forEach(a => {
+        a.list.forEach(l => {
+            let msg = c.title
+            if (Math.abs(a.day) > 0) {
+                msg += `，当前是提前${Math.abs(a.day)}天的提醒`
+            } else {
+                msg += ` 今天到了`
+            }
+            events.push({
+                title: c.title,
+                message: msg
+            });
+        })
+    })
+}
 
 // 读取配置 
 const config = yaml.load(fs.readFileSync('./config.yaml', 'utf8'));
 // 解析配置
 config.calendar_list.forEach(confParse);
 // 生成列表事件
+config.calendar_list.forEach(confParse);
 // 排序
 // 写入结果
-fs.writeFileSync('./../dist/result.json', JSON.stringify(config))
+fs.writeFileSync('./../dist/config.events.json', JSON.stringify(config))
+fs.writeFileSync('./../dist/config.result.json', JSON.stringify(config))
