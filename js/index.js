@@ -74,12 +74,12 @@ const confParse = (c) => {
 let events = []
 const EventList = (c) => {
     c.alarm.forEach(a => {
-        a.list.forEach(l => {
+        a.list.forEach((l, index) => {
             let msg = c.title
             if (Math.abs(a.day) > 0) {
-                msg += `，当前是提前${Math.abs(a.day)}天的提醒`
+                msg += `，(${c.event_list[index]})，当前是提前${Math.abs(a.day)}天的提醒`
             } else {
-                msg += ` 今天到了`
+                msg += ` 今天到了，(${c.event_list[index]})`
             }
             events.push({
                 title: c.title,
