@@ -83,7 +83,8 @@ const EventList = (c) => {
             }
             events.push({
                 title: c.title,
-                message: msg
+                message: msg,
+                time: l
             });
         })
     })
@@ -94,8 +95,9 @@ const config = yaml.load(fs.readFileSync('./config.yaml', 'utf8'));
 // 解析配置
 config.calendar_list.forEach(confParse);
 // 生成列表事件
-config.calendar_list.forEach(confParse);
+config.calendar_list.forEach(EventList);
 // 排序
+events.sort((a, b) => a.time - b.time)
 // 写入结果
-fs.writeFileSync('./../dist/config.events.json', JSON.stringify(config))
+fs.writeFileSync('./../dist/config.events.json', JSON.stringify(events))
 fs.writeFileSync('./../dist/config.result.json', JSON.stringify(config))
