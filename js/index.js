@@ -76,10 +76,11 @@ const EventList = (c) => {
     c.alarm.forEach(a => {
         a.list.forEach((l, index) => {
             let msg = c.title
+            let eventTime = new Date(c.event_list[index]).toISOString()
             if (Math.abs(a.day) > 0) {
-                msg += `，(${c.event_list[index]})，当前是提前${Math.abs(a.day)}天的提醒`
+                msg += `，(${eventTime})，当前是提前${Math.abs(a.day)}天的提醒`
             } else {
-                msg += ` 今天到了，(${c.event_list[index]})`
+                msg += ` 今天到了，(${eventTime})`
             }
             events.push({
                 title: c.title,
